@@ -1,0 +1,24 @@
+ PULL WORDPRESS IMAGE. 
+
+# docker pull wordpress
+# docker pull mysql:5.7
+
+START THE MYSQL CONTAINER
+# docker container run --name webweb -e MYSQL_ROOT_PASSWORD=password123 -d
+ mysql:5.7
+
+CHECK THE IP ADDRESS 
+# docker container inspect CON_ID
+
+START THE WORDPRESS CONTAINER 
+# docker container run --name webpress -e WORDPRESS_DB_HOST=172.17.0.2:3306 -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=password123 -d wordpress
+
+VERIFY THE RUNNING CONTAINER
+# docker container ls
+
+CHECK THE NEW IP ADDRESS 
+#  docker inspect fce60ea6d93b
+
+ACCESS THE WORDPRESS 
+# firefox http://172.17.0.3
+
